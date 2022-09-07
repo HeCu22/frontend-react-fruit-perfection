@@ -9,6 +9,13 @@ import './App.css';
 function App() {
     const [messageValue, setMessageValue] = React.useState("");
     const [checkedTerms, toggleCheckedTerms] = React.useState(false);
+    const [clicked, toggleClicked] = React.useState(false);
+
+    function handleClick() {
+        console.log('De knop is succesvol aangeklikt');
+        toggleClicked(!clicked);
+    }
+
     return (
         <>
             <header>
@@ -77,6 +84,7 @@ function App() {
                     <button
                         disabled={checkedTerms === false}
                         type="submit"
+                        onClick={handleClick}
                     >
                         Verstuur
                     </button>
